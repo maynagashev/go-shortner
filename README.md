@@ -34,5 +34,9 @@ git fetch template && git checkout template/main .github
 ## Запуск линтеров
 
 ```bash
+# Ручной запуск линтеров
 clear && golangci-lint run
+
+# Прогон pre-commit хука
+pre-commit run --all-files
 ```
