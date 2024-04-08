@@ -2,6 +2,8 @@ package main
 
 import (
 	"flag"
+	"fmt"
+	"net"
 	"strconv"
 )
 
@@ -22,5 +24,5 @@ func parseFlags() Flags {
 }
 
 func (f Flags) GetServerURL() string {
-	return *f.Server.Host + ":" + strconv.Itoa(*f.Server.Port)
+	return fmt.Sprintf("http://%s", net.JoinHostPort(*f.Server.Host, strconv.Itoa(*f.Server.Port)))
 }

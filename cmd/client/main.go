@@ -14,7 +14,7 @@ import (
 
 func main() {
 	flags := parseFlags()
-	var contextTimeout = 5 * time.Second
+	var contextTimeout = 10 * time.Second
 
 	ctx, cancel := context.WithTimeout(context.Background(), contextTimeout)
 	defer cancel()
